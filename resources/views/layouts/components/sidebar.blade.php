@@ -7,14 +7,10 @@
                 <a href="/"
                     class="transition-all duration-100 flex items-center p-2 dark:fill:white fill-gray-900 text-gray-900 rounded-lg dark:text-white hover:bg-blue-200 dark:hover:bg-blue-700 hover:fill-black active:bg-blue-300 group @if (Route::is('welcome')) bg-blue-400 @endif">
                     <svg class="min-w-6 min-h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        viewBox="0 0 24 24">
-                        <path fill-rule="evenodd"
-                            d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
-                            clip-rule="evenodd" />
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                        <path fill="currentColor" d="M261.56 101.28a8 8 0 0 0-11.06 0L66.4 277.15a8 8 0 0 0-2.47 5.79L63.9 448a32 32 0 0 0 32 32H192a16 16 0 0 0 16-16V328a8 8 0 0 1 8-8h80a8 8 0 0 1 8 8v136a16 16 0 0 0 16 16h96.06a32 32 0 0 0 32-32V282.94a8 8 0 0 0-2.47-5.79Z"/><path fill="currentColor" d="m490.91 244.15l-74.8-71.56V64a16 16 0 0 0-16-16h-48a16 16 0 0 0-16 16v32l-57.92-55.38C272.77 35.14 264.71 32 256 32c-8.68 0-16.72 3.14-22.14 8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37A16 16 0 0 0 43 267.56L250.5 69.28a8 8 0 0 1 11.06 0l207.52 198.28a16 16 0 0 0 22.59-.44c6.14-6.36 5.63-16.86-.76-22.97"/>
                     </svg>
-
-                    <span class="ms-5 text-nowrap">Home</span>
+                    <span class="ms-5 icon-[ion--home]">Home</span>
                 </a>
             </li>
             <li>
@@ -98,7 +94,7 @@
     <div class="px-3 pb-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
         @auth
 
-            <ul class="w-full p-0 font-medium flex flex-col mt-2 gap-2">
+            {{-- <ul class="w-full p-0 font-medium flex flex-col mt-2 gap-2">
                 <li>
                     <a href="{{ route('profile') }}"
                         class="transition-all duration-100 flex items-center p-2 dark:fill:white fill-gray-900 text-gray-900 rounded-lg dark:text-white hover:bg-blue-200 dark:hover:bg-blue-700 hover:fill-black active:bg-blue-300 group @if (Route::is('profile')) bg-blue-400 @endif">
@@ -127,8 +123,8 @@
                         <span class="ms-5 text-nowrap">Sign Out</span>
                     </a>
                 </li>
-            </ul>
-            <div class="flex justify-start items-center gap-3 mt-4">
+            </ul> --}}
+            {{-- <div class="flex justify-start items-center gap-3 mt-4">
                 <div class="rounded-full max-w-10 max-h-10 min-h-10 min-w-10 overflow-hidden">
                     <img class="min-w-10 min-h-10 object-cover"
                         src="{{ Auth::user()->profile_pict ? Storage::url('profile_pictures/' . Auth::user()->profile_pict) : 'https://flowbite.com/docs/images/people/profile-picture-5.jpg' }}"
@@ -142,7 +138,7 @@
                         {{ Auth::user()->email }}
                     </p>
                 </div>
-            </div>
+            </div> --}}
         @else
             <ul class="w-full p-0 font-medium flex flex-col mt-2 gap-2">
                 <li>

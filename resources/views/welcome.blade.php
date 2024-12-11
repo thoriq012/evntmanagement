@@ -10,16 +10,38 @@
 
 @section('content')
 
+    <section>
+        <header
+        class="bg-white">
+            <div class="w-full max-w-screen-xl mx-auto p-4">
+                <div class="md:flex md:items-center md:justify-between">
+                    <a href="/" class="flex items-center mb-4 md:mb-0 space-x-3 rtl:space-x-reverse">
+                        <img src="{{ asset('vendor/img/logoevnt.png') }}" class="h-8" alt="Flowbite Logo" />
+                        <span class="self-center text-2xl whitespace-nowrap dark:text-white" style="font-family: poppins">Event Organizer</span>
+                    </a>
+                    <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                        <li>
+                            <a href="#home" class="hover:underline me-4 md:me-6">Welcome</a>
+                        </li>
+                        <li>
+                            <a href="#Events" class="hover:underline me-4 md:me-6">Recent Event</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>    
+        </header>
+    </section>
+
     <!-- Hero Section -->
     <section
-        class="text-gray-900 dark:text-gray-100 dark:bg-green-500-950 py-20 text-center dark:bg-[url(http://127.0.0.1:8000/vendor/img/Gracile-digital-art-artwork-illustration-concept-art-environment-2200837-wallhere.com-m.jpg)] lg:dark:bg-[url(http://127.0.0.1:8000/vendor/img/Gracile-digital-art-artwork-illustration-concept-art-environment-2200837-wallhere.com.jpg)] bg-[url(http://127.0.0.1:8000/vendor/img/Light2.jpg)] bg-cover"
+        id="home" class="text-gray-900 dark:text-gray-100 dark:bg-blue-950 py-20 text-center bg-[url(http://127.0.0.1:8000/vendor/img/evnt4.jpg)] bg-cover"
         data-aos="fade-down">
         <div class=" mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-4">Welcome to OURevent</h2>
+            <h2 class="font-semibold text-4xl mb-4 ">Welcome to EO</h2>
             <p class="mb-6">Discover the best solution to manage your event efficiently.</p>
-            <a href="#Events" class="text-white-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">
-                See Recent Event
-            </a>
         </div>
     </section>
 
@@ -29,7 +51,7 @@
                 <div class="p-8  h-full flex flex-col justify-center items-center" data-aos="fade-right">
                     <div class="text-left">
                         <h2
-                            class="lg:text-6xl md:text-4xl text-3xl font-bold mb-4 text-gray-900 text-uppercase dark:text-gray-100">
+                            class="lg:text-6xl md:text-4xl text-3xl font-sans mb-4 text-gray-900 text-uppercase dark:text-gray-100">
                             Empower your event management with ease and efficiency</h2>
                         <p class="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                             Our platform is the trusted choice of professionals across industries to boost productivity and
@@ -41,13 +63,12 @@
                     </div>
                 </div>
                 <div data-aos="fade-left" data-aos-delay="300">
-                    <img src="{{ asset('vendor/img/8d5f781f-9f15-4c39-9781-635555306206.png') }}" alt="OURevent Image"
+                    <img src="{{ asset('vendor/img/evnt.png') }}" alt="OURevent Image"
                         class="rounded-lg object-cover rounded-lg transform transition duration-300 hover:bg-gray-300 dark:hover:bg-gray-800 hover:scale-105">
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Events Section -->
     <section id="Events" class="py-16 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
@@ -58,9 +79,9 @@
                     $delay = 0;
                 @endphp
                 @forelse ($events->take(4) as $event)
-                    <div data-aos="fade-right" data-aos-offset="-100" data-aos-delay="{{ $delay }}">
+                    <div data-aos="fade-in-out" data-aos-offset="-100" data-aos-delay="{{ $delay }}">
                         @php
-                            $delay += 50;
+                            $delay += 3000;
                         @endphp
                         <div
                             class="p-6 shadow-md rounded-lg bg-gray-200 dark:bg-gray-800 text-left hover:scale-105 transform transition duration-300">
@@ -151,16 +172,7 @@
         </div>
     @endforeach
 
-    <!-- About Section -->
-    <section id="about" class="py-16 text-gray-800 dark:text-gray-100" data-aos="fade-up" data-aos-offset="-200">
-        <div class=" mx-auto px-4 text-center">
-            <h2 class="text-3xl font-semibold mb-4">About Us</h2>
-            <p class="mb-6">We are committed to delivering exceptional event management solutions that simplify your
-                workflow.</p>
-            <p>Trusted by professionals across industries, our platform empowers you to maximize efficiency and achieve
-                outstanding results.</p>
-        </div>
-    </section>
+
 
 
 @stop

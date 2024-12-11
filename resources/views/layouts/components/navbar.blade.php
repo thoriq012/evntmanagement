@@ -15,10 +15,11 @@ class="fixed flex items-center min-w-full w-svw h-16 z-20 top-0 bg-white dark:bo
                 </svg>
             </button>
             <img onclick="$(document).ready(function () {$('#smallSidebar').prop('checked') ? $('#smallSidebar').prop('checked', false) : $('#smallSidebar').prop('checked', true)}); "
-                src="{{ asset('vendor/img/Logo.png') }}" class="hidden sm:block h-8 ms-3 sm:ms-0 sm-0 sm:me-3" alt="FlowBite Logo" />
+                src="{{ asset('vendor/img/logoevnt.png') }}" class="hidden sm:block h-8 ms-3 sm:ms-0 sm-0 sm:me-3" alt="FlowBite Logo" />
             <a href="/" class="flex ms-2 sm:me-20">
                 <span
-                    class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap hidden sm:block dark:text-white">OURevent</span>
+                    class="self-center text-xl sm:text-2xl whitespace-nowrap hidden sm:block dark:text-white" style="font-family: poppins">Event Organizer
+                </span>
             </a>
         </div>
         <form @if(Route::is('home.events')) @else action="{{route('home.events')}}" method="get" @endif class="block lg:pl-2">
@@ -83,18 +84,45 @@ class="fixed flex items-center min-w-full w-svw h-16 z-20 top-0 bg-white dark:bo
                     </p>
                 </div>
                 <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('profile') }}"
                             class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">My
                             profile</a>
-                    </li>
-                    <li>
+                    </li> --}}
+                    {{-- <li>
                         <a href="#"
                             class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Account
                             settings</a>
-                    </li>
+                    </li> --}}
+                    <ul class="w-full p-0 font-medium flex flex-col mt-2 gap-2">
+                        <li>
+                            <a href="{{ route('profile') }}"
+                                class="transition-all duration-100 flex items-center p-2 dark:fill:white fill-gray-900 text-gray-900 rounded-lg dark:text-white hover:bg-blue-200 dark:hover:bg-blue-700 hover:fill-black active:bg-blue-300 group @if (Route::is('profile')) bg-blue-400 @endif">
+                                <svg class="min-w-6 min-h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M23 12c0 3.345-1.493 6.342-3.85 8.36A10.96 10.96 0 0 1 12 23c-2.73 0-5.227-.994-7.15-2.64A10.98 10.98 0 0 1 1 12C1 5.925 5.925 1 12 1s11 4.925 11 11m-7-3.5a4 4 0 1 0-8 0a4 4 0 0 0 8 0m2.5 9.725V18a4 4 0 0 0-4-4h-5a4 4 0 0 0-4 4v.225q.31.323.65.615A8.96 8.96 0 0 0 12 21a8.96 8.96 0 0 0 6.5-2.775"/>
+                                </svg>
+        
+                                <span class="ms-5 icon-[tdesign--user-circle-filled]">Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('home.logout') }}"
+                                class="transition-all duration-100 flex items-center p-2 dark:fill:white fill-gray-900 text-gray-900 rounded-lg dark:text-white hover:bg-blue-200 dark:hover:bg-blue-700 hover:fill-black active:bg-blue-300 group">
+                                <svg class="min-w-6 min-h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2" />
+                                </svg>
+        
+        
+                                <span class="ms-5 text-nowrap">Sign Out</span>
+                            </a>
+                        </li>
+                    </ul>
                 </ul>
-                <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
+                {{-- <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
                     <li>
                         <a href="#"
                             class="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
@@ -140,14 +168,14 @@ class="fixed flex items-center min-w-full w-svw h-16 z-20 top-0 bg-white dark:bo
                             </svg>
                         </a>
                     </li>
-                </ul>
-                <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
+                </ul> --}}
+                {{-- <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
                     <li>
                         <a href="{{ route('home.logout') }}"
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                             role="menuitem">Sign out</a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         @else
             <a href="{{ route('login') }}"

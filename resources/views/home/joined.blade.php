@@ -20,9 +20,9 @@
                     <th scope="col" class="px-6 py-3">
                         End
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    {{-- <th scope="col" class="px-6 py-3">
                         Action
-                    </th>
+                    </th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -39,20 +39,6 @@
                         </td>
                         <td class="px-6 py-4">
                             {{ $item->event_end }}
-                        </td>
-                        <td class="px-6 py-4">
-                            <button data-modal-target="ticket-modal"
-                                data-modal-toggle="ticket-modal"
-                                data-qr-id="{{ $item->eventParticipants[0]->id }}" data-event-name="{{ $item->name }}" data-event-date="{{ $item->event_date }}"
-                                class="openTicket block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                type="button">
-                                See Ticket
-                            </button>
-                        </td>
-                        <td class="hidden" id="qr-table-{{ $item->eventParticipants[0]->id }}">
-                            <div id="qr-{{ $item->eventParticipants[0]->id }}">
-                                {{ QrCode::size(256)->generate(route('participan.verification', $item->eventParticipants[0]->id)) }}
-                            </div>
                         </td>
                     </tr>
                 @endforeach

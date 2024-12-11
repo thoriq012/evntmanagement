@@ -18,7 +18,7 @@
                         src="{{ asset('vendor/img/Logo.png') }}" class="hidden sm:block h-8 ms-3 sm:ms-0 sm-0 sm:me-3" alt="FlowBite Logo" />
                     <a href="/" class="flex ms-2 md:me-24">
                         <span
-                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">OURevent</span>
+                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">EO</span>
                     </a>
                 </div>
                 <form action="#" method="GET" class="hidden lg:block lg:pl-2">
@@ -94,7 +94,7 @@
                                     settings</a>
                             </li>
                         </ul>
-                        <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
+                        {{-- <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
                             <li>
                                 <a href="#"
                                     class="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
@@ -140,7 +140,7 @@
                                     </svg>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> --}}
                         <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
                             <li>
                                 <a href="{{ route('home.logout') }}"

@@ -15,9 +15,6 @@
                 <li>
                     <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
                 </li>
-                <li>
-                    <a href="#" class="hover:underline">Contact</a>
-                </li>
             </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
