@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'Event Organizer')</title>
-    <link rel="icon" href="{{ asset('vendor/img/logoevnt.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('vendor/img/logoevnt.png') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
