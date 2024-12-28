@@ -10,6 +10,12 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * User Controller Terhubung Kedalam Model User
+ * 
+ * 
+ */
+
 class UsersController extends Controller
 {
     // Tampilkan semua pengguna
@@ -82,7 +88,7 @@ class UsersController extends Controller
 
         return redirect()->back()->with('success', 'Profile picture updated successfully.');
     }
-
+    // 
     public function updatePersonalData(Request $request, User $user)
     {
         if ($request['dial_phone'] == '+62') {
@@ -173,7 +179,7 @@ class UsersController extends Controller
         return redirect()->route('home.index')->with('danger', 'User deleted successfully.');
     }
 
-
+    // Untuk Memverify Email
     public function verifyEmail()
     {
         return view('auth.verify');

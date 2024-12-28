@@ -1,3 +1,4 @@
+{{-- Menampilkan Isi Tampilan Pada Navbar User --}}
 @extends('layouts.app')
 
 @section('title', 'User Management')

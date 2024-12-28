@@ -1,8 +1,10 @@
+{{-- Bagian Navbar --}}
 <aside id="logo-sidebar"
     class="fixed top-16 bottom-0 flex flex-col overflow-x-hidden justify-between peer-checked:max-w-16 left-0 z-10 min-w-64 sm:min-w-16 w-64 min-h-[calc(100svh_-_4rem)] transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
     aria-label="Sidebar">
     <div class="h-full px-3 pb-4 bg-white dark:bg-gray-800">
         <ul class="w-full p-0 font-medium flex flex-col mt-2 gap-2">
+            {{-- Navbar Home --}}
             <li>
                 <a href="/"
                     class="transition-all duration-100 flex items-center p-2 dark:fill:white fill-gray-900 text-gray-900 rounded-lg dark:text-white hover:bg-blue-200 dark:hover:bg-blue-700 hover:fill-black active:bg-blue-300 group @if (Route::is('welcome')) bg-blue-400 @endif">
@@ -14,6 +16,7 @@
                 </a>
             </li>
             <li>
+                {{-- navbar Event --}}
                 <a href="{{ route('home.events') }}"
                     class="transition-all duration-100 flex items-center p-2 dark:fill:white fill-gray-900 text-gray-900 rounded-lg dark:text-white hover:bg-blue-200 dark:hover:bg-blue-700 hover:fill-black active:bg-blue-300 group @if (Route::is('home.events')) bg-blue-400 @endif">
                     <svg class="min-w-6 min-h-6 text-gray-800 dark:text-white" aria-hidden="true" 
@@ -27,7 +30,7 @@
                 </a>
             </li>
             @auth
-                @foreach (config('userNav') as $item)
+                @foreach (config('userNav') as $item) {{-- terhubung ke dalam config usernav --}}
                     @if ($item['access'] == 'all')
                         <li>
                             <a href="{{ route($item['link']) }}"
@@ -69,7 +72,7 @@
                         </svg>
                     </label>
                     <ul
-                        class="mx-2 transition-all @if(Auth::check() && Auth::user()->role == 'admin') max-h-[calc(100svh_-_37rem)] @elseif(Auth::check() && Auth::user()->role == 'user') max-h-[calc(100svh_-_34rem)] @endif overflow-y-auto duration-100 opacity-0 peer-checked:opacity-100 text-sm dark:bg-slate-900 text-gray-700 bg-gray-50 dark:text-gray-200 hidden peer-checked:block">
+                        class="mx-2 transition-all @if(Auth::check() && Auth::user()->role == 'admin') max-h-[calc(100svh_-37rem)] @elseif(Auth::check() && Auth::user()->role == 'user') max-h-[calc(100svh-_34rem)] @endif overflow-y-auto duration-100 opacity-0 peer-checked:opacity-100 text-sm dark:bg-slate-900 text-gray-700 bg-gray-50 dark:text-gray-200 hidden peer-checked:block">
                         @if ($myEvents->isEmpty())
                             <li>
                                 <p class="block px-4 py-2">
@@ -86,7 +89,7 @@
                             @endforeach
                         @endif
                     </ul>
-                </div>
+                </div>
             @endauth
 
         </ul>

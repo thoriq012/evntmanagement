@@ -1,3 +1,4 @@
+{{-- Isi Tampilan Pada Navbar Joined --}}
 @extends('layouts.app')
 
 @section('title', 'Joined Events')

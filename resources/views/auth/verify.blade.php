@@ -1,3 +1,4 @@
+{{-- Menampilkan tampilan Verifikasi Email --}}
 @extends('layouts.components.header')
 
 @section('script_link')

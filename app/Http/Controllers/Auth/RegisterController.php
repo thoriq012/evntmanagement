@@ -73,6 +73,7 @@ class RegisterController extends Controller
         ]);
     }
 
+    //clearSession membersihkan sesi pengguna saat logout dari halaman pendaftaran
     public function clearSession(Request $request){
         Auth::logout();
         

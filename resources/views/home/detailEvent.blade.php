@@ -1,3 +1,4 @@
+{{-- Tampilan Form ketika Seorang User Ingin Join Ke Dalam Sebuah Event --}}
 @extends('layouts.app')
 
 @section('title', 'Detail Event (' . $event->name . ')')

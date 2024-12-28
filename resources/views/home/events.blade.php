@@ -1,3 +1,4 @@
+{{-- Isi Tampilan Pada Navbar Events --}}
 @extends('layouts.app')
 
 @section('title', 'Events')
@@ -8,7 +9,7 @@
             <div class="mb-4">
                 <select id="sort-select"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="upcoming">Upcoming Events</option>
+                    <option value="upcoming">All Events</option>
                     <option value="newest">Newest</option>
                     <option value="all">Events</option>
                 </select>

@@ -20,15 +20,16 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\EventParticipantsController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
+// Menampilkan Halaman Website
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
-
+//Menampilkan Form Perubahan Email Pengguna
 Route::get('/change-email', function () {
     return view('auth.register');
 })->name('change.email');
-
+// Memproses Perubahan Email Pengguna
 Route::put('/change-email', [UsersController::class, 'update'])->name('change.email');
-
+// Menampilkan Form Reset Password
 Route::get('/password/reset', function () {
     return view('auth.passwords.email');
 })->name('password.email');
@@ -50,12 +51,12 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-
-Route::get('all-events', [HomeController::class, 'events'])->name('home.events');
+// Menampilkan Semua Event dan Menampilkan Detail Event
+Route::get('Events', [HomeController::class, 'events'])->name('home.events');
 Route::get('events', [EventsController::class, 'detailEvent'])->name('event.detail');
 
 Auth::routes();
-
+// Menampilkan detail event
 Route::get('/events/preview/{event}', [EventsController::class, 'showPreview'])->name('events.preview');
 
 Route::post('/join', [EventParticipantsController::class, 'store'])->name('join');
@@ -77,7 +78,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/personal-data/{user}', [UsersController::class, 'updatePersonalData'])->name('change-personal-data');
     });
 
-    // Route yang dapat diakses apabila sudah verifikasi
+    // Route yang dapat diakses apabila sudah verifikasi 
+    // Membatasi akses hanya untuk pengguna yang sudah memverifikasi email
     Route::middleware(VerificationEmail::class)->group(function () {
 
         Route::prefix('admin/')->middleware(['auth', AdminCheck::class])->group(function () {
@@ -101,7 +103,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/home/logout', [HomeController::class, 'logout'])->name('home.logout');
-
+// kembali ke halaman sebelumnya
 Route::any('{query}', function () {
     return redirect()->back();
 })->where('query', '.*');

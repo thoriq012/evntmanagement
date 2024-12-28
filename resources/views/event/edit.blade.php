@@ -59,7 +59,7 @@
                 <path fill-rule="evenodd" d="M14 17h-4v-2h4v2Z" clip-rule="evenodd" />
             </svg>
             Save Event
-        </button>>
+        </button>
         <a href="{{ route('events.preview.edit', ['event' => $event->id]) }}"
             class="inline-flex items-center mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
             <svg class="w-[24px] h-[24px] text-gray-800 dark:text-white" aria-hidden="true"

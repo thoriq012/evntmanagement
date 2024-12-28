@@ -1,3 +1,4 @@
+{{-- Untuk Menampilkan Halamn Dashboard pada web --}}
 @extends('layouts.app')
 
 @section('title', 'Dashboard')

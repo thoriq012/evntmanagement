@@ -1,3 +1,4 @@
+{{-- Menampilkan Tampilan Registrasi --}}
 @extends('layouts.components.header')
 
 @section('script_link')

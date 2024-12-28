@@ -1,3 +1,4 @@
+{{-- tampilan email ketika email sudah kekirim ke dalam mailtrap --}}
 <!DOCTYPE html>
 <html>
 

@@ -1,0 +1,127 @@
+# Software Requirements Specification (SRS)
+
+# Tujuan Dari Code Ini
+
+Dokumen ini bertujuan untuk mendefinisikan kebutuhan dan 
+spesifikasi untuk pengembangan Sistem Manajemen Event berbasis Laravel. 
+Sistem ini memungkinkan pengguna untuk mendaftar, membuat, dan mengelola event secara online.
+
+1. Lingkup
+      - Sistem ini akan mencakup fungsionalitas utama seperti:
+      - Pendaftaran pengguna
+      - Pembuatan event
+      - Manajemen peserta
+      - Pengiriman email notifikasi
+      - Dashboard admin untuk pengelolaan event
+2. Definisi, Akronim, dan Singkatan
+      - Event: Acara yang dibuat oleh pengguna untuk diselenggarakan.
+      - Admin: Pengguna yang memiliki hak akses untuk mengelola sistem.
+      - Peserta: Pengguna yang mendaftar untuk mengikuti event.
+
+# Gambaran Umum Sistem
+
+2.1 Fungsi Utama Sistem 
+      - Pendaftaran Pengguna: Pengguna bisa mendaftar akun dengan memasukkan informasi dasar seperti nama, email, dan password. 
+      - Login dan Logout: Pengguna yang sudah terdaftar dapat masuk dan keluar dari sistem. 
+      - Pembuatan Event: Pengguna yang sudah login dapat membuat event baru dengan memberikan detail seperti nama event, tanggal, waktu, dan lokasi. 
+      - Manajemen Peserta: Pengguna dapat melihat daftar peserta yang mendaftar untuk event mereka dan melakukan pengelolaan (misalnya, konfirmasi kehadiran). 
+      - Email Notifikasi: Sistem akan mengirimkan email notifikasi kepada peserta yang telah mendaftar untuk event. 
+      - Dashboard Admin: Admin dapat mengelola semua event yang dibuat pengguna, melihat statistik peserta, dan melakukan manajemen pengguna.
+2.2 Karakteristik Pengguna 
+      - Admin: Memiliki hak akses penuh untuk mengelola seluruh event dan pengguna dalam sistem. 
+      - Pengguna Terdaftar: Pengguna yang dapat membuat dan mengelola event mereka sendiri. 
+      - Peserta Event: Pengguna yang hanya bisa mendaftar ke event dan menerima notifikasi.
+2.3 Batasan Sistem 
+      - Sistem akan menggunakan MySQL sebagai basis data untuk menyimpan informasi event, pengguna, dan peserta. - Email notifikasi akan dikirim menggunakan fungsi PHPMailer / Lainnya.
+
+# Spesifikasi Fungsional
+
+3.1 Pendaftaran Pengguna 
+      - Input: Nama, Email, Password 
+      - Proses: Validasi data, simpan data ke basis data 
+      - Output: Pesan sukses atau error
+3.2 Login dan Logout 
+      - Input: Email dan Password 
+      - Proses: Autentikasi pengguna, validasi session 
+      - Output: Akses ke dashboard pengguna
+3.3 Pembuatan Event 
+      - Input: Nama Event, Deskripsi, Tanggal, Waktu, Lokasi 
+      - Proses: Simpan data event ke basis data 
+      - Output: Event ditambahkan ke sistem, email notifikasi dikirim ke peserta
+3.4 Manajemen Peserta 
+      - Input: ID Event, ID Pengguna 
+      - Proses: Menampilkan daftar peserta, mengubah status kehadiran peserta 
+      - Output: Tampilan daftar peserta dengan status kehadiran
+3.5 Email Notifikasi 
+      - Input: Email peserta, informasi event 
+      - Proses: Mengirim email menggunakan PHPMailer 
+      - Output: Peserta menerima email notifikasi
+3.6 Dashboard Admin 
+      - Input: Permintaan akses dari admin 
+      - Proses: Menampilkan statistik event, peserta, dan mengelola pengguna 
+      - Output: Tampilan dashboard admin dengan informasi detail
+
+# Spesifikasi Non-Fungsional
+
+4.1 Keamanan 
+      - Pengguna harus menggunakan password yang terenkripsi (menggunakan bcrypt). 
+      - Hanya admin yang dapat mengakses fungsi manajemen pengguna dan event secara penuh.
+4.2 Kinerja 
+      - Pengiriman email tidak boleh memakan waktu lebih dari 1 menit setelah pendaftaran event.
+
+# Antarmuka Pengguna
+
+5.1 Tampilan Dashboard 
+      - Halaman Login: Form login untuk pengguna. 
+      - Dashboard Pengguna: Menampilkan event yang telah dibuat oleh pengguna, dengan opsi untuk menambah event baru. 
+      - Dashboard Admin: Terdapat menu untuk mengelola event dan pengguna.
+5.2 Tampilan Manajemen Event 
+      - Halaman Event: Form untuk membuat atau mengedit event dengan informasi detail seperti nama, tanggal, dan lokasi. 
+      - Daftar Peserta: Menampilkan semua peserta yang telah mendaftar, dengan opsi untuk mengubah status kehadiran.
+
+# Persyaratan Sistem
+
+      - Server: Apache/Nginx dengan minimal PHP 8.0
+      - Database: MySQL versi 5.7 atau lebih baru.
+      - Library Tambahan: PHPMailer untuk pengiriman email.
+
+# Pengujian
+
+7.1 Pengujian Fungsional 
+   - Menguji pendaftaran pengguna baru. 
+   - Menguji login dan logout. 
+   - Menguji pembuatan event dan pengelolaan peserta. 
+   - Menguji pengiriman email notifikasi.
+7.2 Pengujian Kinerja 
+   - Menguji performa sistem dengan 100 hingga 500 pengguna bersamaan. 
+   - Menguji waktu respons email setelah pendaftaran event.
+
+# Terhubung Kedalam Mailtrap -> untuk mendapatkan notifikasi email
+      - Email : m37821249@gmail.com
+      - Password : 5B@uzE7keSnww9z
+
+
+# DOKUMENTASI
+      
+      ~ Flowchart: HomePage (Terdapat tampilan home dan event yang sudah dibuat) 
+      -> Login/Register (Admin atau User dapat login terlebih dahulu sebelum keduanya dapat mengakses event yang mereka buat)
+      -> Dashboard (Berisi beberapa tampilan Navbar, Admin: Terdapat Navbar Home, Events, Dashboard, Your Event, Joined, User dan Participant  User: Home, Event, Your Event, Joined dan Participant)
+      -> Feature/Actions (
+            Home: Berisi beberapa event yang telah dibuat dan tampilan Home.
+            Event: Berisi Event yang telah dibuat oleh Admin maupun User.
+            Dashboard: Menampilkan Jumlah Event yang sudah dibuat, mengetahui jumlah user yang sudah login, mengetahui ada berapa event yang Active dan mengetahui Event yang sudah berakhir (hanya admin yang dapat melihat tampilan Dashboard ).
+            Your Event: Sebelum membuat event seorang user yang baru login harus mengisi profile mereka terlebih dahulu, Menampilkan jumlah Event dan dapat mengedit sebuah event, Menghapus sebuah event dan See participant(melihat user siapa saja yang sudah join event tersebut).
+            Joined: Menampilkan event yang sudah dibuat oleh Admin atau User oleh mereka sendiri.
+            Users: Menampilkan siapa saja yang sudah login kedalam website tersebut, dapat mengubah role mereka dari yang sebelumnya User menjadi Admin atau sebaliknya (Hanya Admin yang dapat mengakses tampilan Users).
+            Participant: Menampilkan event-event yang sudah dibuat, dan menampilkan siapa saja yang telah join kedalam event tersebut (Admin dapat mengkick/Menghapus user yang sudah join kedalam event tersebut).
+      )
+      -> Logout
+
+1.Controllers
+      - Auth Controller terhubung ke dalam
+
+2.Config
+      - UserNav.php pada config dibuat untuk siapa saja yang dapat mengakses Navbar, contoh :
+         'access' => 'admin' -> Berarti Navbar tersebut hanya dapat di akses oleh seorang admin.
+         'access' => 'all' -> Bararti Navbar tersebut bisa di akses oleh Admin maupun User.
+      - PhoneCode.php pada config berguna untuk memasukkan nomor telfon dari berbagai negara.

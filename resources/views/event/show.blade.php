@@ -23,7 +23,7 @@
                     <th scope="col" class="px-6 py-3">
                         Presence
                     </th>
-                    @if (Auth::user()->role == 'user')
+                    @if (Auth::user()->role == 'admin')
                         <th scope="col" class="px-6 py-3">
                             Action
                         </th>
@@ -54,7 +54,7 @@
                                     class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs font-semibold">Absent</span>
                             </td>
                         @endif
-                        @if (Auth::user()->role == 'user')
+                        @if (Auth::user()->role == 'admin')
                             <td class="px-6 py-4">
                                 {{-- In your view file, change this: --}}
                                 <form action="{{ route('eventParticipan.destroy', $data->id) }}" method="POST">
